@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        height: 10vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: steelblue;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+      .profile-details {
+        width: 90%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: burlywood;
+        padding: 3vmin;
+        border: 1px solid brown;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+      p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 3vmin;
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom: 1px solid brown;
+      }
+      p span {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .rank {
+        width: 50%;
+        height: 30vh;
+        background-color: brown;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 20px;
+      }
+      input {
+        height: 7vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <h1>User Profile</h1>
+      <section>
+        <div class="profile-details">
+          <p><strong>Name:</strong> <span id="profile-name"></span></p>
+          <p><strong>Age:</strong> <span id="profile-age"></span></p>
+          <p><strong>Class:</strong> <span id="profile-advclass"></span></p>
+          <p><strong>Mana Level:</strong> <span id="profile-mana"></span></p>
+          <p><strong>Status:</strong> <span id="profile-status"></span></p>
+        </div>
+      </section>
+    </div>
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+      "
+    >
+      <div id="element" class="rank">
+        <h3 style="font-size: 4vmin; text-align: center">Rank</h3>
+        <h1 id="rank"></h1>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid black;
+          width: 80%;
+        "
+      >
+        <label
+          style="font-size: 4vmin; font-family: Arial, Helvetica, sans-serif"
+          >Submit your Quests</label
+        >
+        <input type="file" id="ranklisting" min="1" maxlength="1" />
+        <button onclick="submitFile()">Submit</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const element = document.getElementById("element");
+      const rankElement = document.getElementById("rank");
+
+      const ranks = ["F", "E", "D", "C", "B", "A"];
+
+      let currentRankIndex = 0;
+
+      function updateRank() {
+        if (currentRankIndex < ranks.length) {
+          rankElement.textContent = ranks[currentRankIndex];
+
+          switch (ranks[currentRankIndex]) {
+            case "F":
+              element.style.setProperty("background-color", "brown");
+
+              break;
+            case "E":
+              element.style.setProperty("background-color", "grey");
+              break;
+            case "D":
+              element.style.setProperty("background-color", "chocolate");
+              break;
+            case "C":
+              element.style.setProperty("background-color", "red");
+              break;
+            case "B":
+              element.style.setProperty("background-color", "white");
+              break;
+            case "A":
+              element.style.setProperty("background-color", "gold");
+              break;
+            default:
+              element.style.setProperty("background-color", "brown");
+              break;
+          }
+
+          currentRankIndex++;
+        }
+      }
+
+      function submitFile() {
+        updateRank();
+
+        const listing = document.getElementById("rankListing");
+      }
+
+      updateRank();
+    </script>
+  </body>
+</html>

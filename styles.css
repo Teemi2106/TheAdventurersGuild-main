@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-size: 6vmin;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  color: brown;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+main {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+  min-height: 50vh;
+  background-color: burlywood;
+  border-radius: 5px;
+}
+
+input,
+button {
+  text-align: center;
+  width: 50%;
+  height: 6vmin;
+}
+.nameh1 {
+  color: crimson;
+  text-decoration: underline;
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: green;
+}
+.reset:hover,
+.reset:focus {
+  background-color: red;
+}
+#continuing {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#continuing button {
+  background-color: brown;
+  color: antiquewhite;
+}
+#continuing button:hover,
+#continuing button:focus {
+  background-color: greenyellow;
+  color: black;
+}
+.advclass {
+  color: red;
+}
